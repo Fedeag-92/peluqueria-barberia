@@ -1,0 +1,24 @@
+{
+    "name": "federicoaguilera/app-salon-php-mvc-js-sass",
+    "description": "Proyecto PHP 8 MVC SQL SASS GULP",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\": "./",
+            "Controllers\\": "./controllers",
+            "Models\\": "./models",
+            "Clases\\": "./clases"
+        }
+    },
+    "authors": [
+        {
+            "name": "Federico Aguilera",
+            "email": "federico.aguilera@est.fi.uncoma.edu.ar"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.5",
+        "intervention/image": "^2.7",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
