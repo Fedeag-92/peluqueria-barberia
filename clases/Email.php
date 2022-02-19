@@ -38,7 +38,7 @@ class Email{
         $phpmailer->Charset = 'UTF-8';
 
         //Definir el contenido
-        $contenido = "<html><p>Hola <strong>" . $this->nombre . "</strong>. Has creado tu cuenta en AppSalon, solo debes confirmar la misma presionando el siguiente enlace</p><p>Presiona aqui: <a href=' " . $_SERVER['SERVER_NAME'] . "confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a></p><p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje.</p></html>";
+        $contenido = "<html><p>Hola <strong>" . $this->nombre . "</strong>. Has creado tu cuenta en AppSalon, solo debes confirmar la misma presionando el siguiente enlace</p><p>Presiona aqui: <a href='https://peluqueria-barberia-nqn.herokuapp.com/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a></p><p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje.</p></html>";
 
 
 
