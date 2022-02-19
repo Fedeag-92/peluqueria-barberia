@@ -2,7 +2,7 @@
 <p class="descripcion-pagina">Inicia sesion con tus datos</p>
 
 <?php
-if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] === 'http://localhost:3000/cita'){
+if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] === 'https://peluqueria-barberia-nqn.herokuapp.com/cita'){
     $alertas['exito'][] = 'Sesion Cerrada';
 }
 include_once __DIR__ . '/../templates/alertas.php' ?>
