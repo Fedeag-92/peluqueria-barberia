@@ -9,7 +9,14 @@ use Models\Sucursal;
 class LoginController{
     public static function login(Router $router){
         $alertas = [];
-        
+        if(isset($_GET['mensaje'])){
+            if($_GET['mensaje'] == 1){
+                Usuario::setAlerta('exito', 'Revisa tu email');
+            }
+            else if ($_GET['mensaje'] == 2){
+                Usuario::setAlerta('exito', 'Password reestablecido');
+            }
+        }
 
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $auth = new Usuario($_POST);
@@ -84,12 +91,13 @@ class LoginController{
                     //Usuario existente, ahora generar token nuevo
                     $usuario->generarToken();
                     $usuario->guardar();
-
+                    
                     //Enviar email
                     $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
+                    
                     $email->enviarInstrucciones();
 
-                    Usuario::setAlerta('exito', 'Revisa tu email');
+                    header('Location: /?mensaje=1');
                 }
             }
         }
@@ -98,10 +106,12 @@ class LoginController{
         $router->render('auth/olvide-password', [
             'alertas' => $alertas
         ]);
+
     }
 
     public static function recuperar(Router $router){
         $alertas = [];
+        $correcto = false;
         $error = false;
 
         $token = s($_GET['token']) ?? '';
@@ -123,12 +133,15 @@ class LoginController{
                     $usuario->password = $password->password;
                     $usuario->hashPassword();
                     $usuario->token = '';
+                    $correcto = true;
 
                     if($usuario->guardar()){
                         Usuario::setAlerta('exito', 'Password reestablecido con exito');
                         Usuario::setAlerta('exito', 'Espere. Redireccionando...');
+
                         
-                        header('refresh:5; url=/');
+                        
+                        header('refresh:5; url=/?mensaje=2');
                     }
                 }
             }
@@ -137,7 +150,8 @@ class LoginController{
         $alertas = Usuario::getAlertas();
         $router->render('auth/recuperar-password', [
             'alertas' => $alertas,
-            'error' => $error
+            'correcto' => $correcto,
+            'error' => $error,
         ]);
     }
 
@@ -175,7 +189,6 @@ class LoginController{
         $router->render('auth/crear-cuenta', [
             'usuario' => $usuario,
             'alertas' => $alertas
-
         ]);
     }
 

@@ -2,7 +2,7 @@
 <p class="descripcion-pagina">Inicia sesion con tus datos</p>
 
 <?php
-if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] === 'https://peluqueria-barberia-nqn.herokuapp.com/cita'){
+if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] === 'http://localhost:3000/cita'){
     $alertas['exito'][] = 'Sesion Cerrada';
 }
 include_once __DIR__ . '/../templates/alertas.php' ?>
@@ -23,3 +23,9 @@ include_once __DIR__ . '/../templates/alertas.php' ?>
     <a href="crear-cuenta">¿Aun no tienes una cuenta? Crea una</a>
     <a href="olvide">¿Olvidaste tu password?</a>
 </div>
+
+<script>    
+    if(typeof window.history.pushState == 'function') {
+        window.history.pushState({}, "Hide", "http://localhost:3000/");
+    }
+</script>

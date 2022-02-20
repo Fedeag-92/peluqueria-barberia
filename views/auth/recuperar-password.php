@@ -10,7 +10,7 @@
         <label for="password">Password: </label>
         <input type="password" id="password" name="password" placeholder="Nuevo Password">
     </div>
-    <input type="submit" value="Guardar Nuevo Password" class="boton">
+    <input type="submit" value="Guardar Nuevo Password" class="boton" <?php echo ($correcto && !empty($_POST)) ? 'disabled' : '' ;?>>
 </form>
 
 <div class="acciones">

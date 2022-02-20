@@ -3,7 +3,7 @@
 
 <?php include_once __DIR__ . '/../templates/alertas.php' ?>
 
-<form action="crear-cuenta" class="formulario" method="post">
+<form action="crear-cuenta" class="formulario" method="post" onsubmit="return desactivar()">
     <div class="campo">
         <label for="nombre">Nombre: </label>
         <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" value="<?php echo s($usuario->nombre); ?>">
@@ -30,3 +30,13 @@
     <a href="./">¿Ya tienes una cuenta? Inicia sesion</a>
     <a href="olvide">¿Olvidaste tu password?</a>
 </div>
+
+<script>
+    function desactivar(){
+        const boton = document.querySelector('.boton');
+        boton.disabled = true;
+        setTimeout(() => {
+            boton.disabled = false;
+        }, 5000);
+    }
+</script>
