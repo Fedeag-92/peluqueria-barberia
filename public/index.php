@@ -46,6 +46,7 @@ $router->post('/api/actualizar-usuario', [APIController::class, 'actualizar']);
 $router->get('/api/servicios-cita', [APIController::class, 'obtenerServiciosCita']);
 $router->post('/api/eliminar', [APIController::class, 'eliminar']);
 $router->get('/api/sucursal', [APIController::class, 'sucursal']);
+$router->post('/api/cantImagenes', [APIController::class, 'obtenerCantImagenes']);
 
 //CRUD de Servicios
 $router->get('/servicios', [ServicioController::class, 'index']);

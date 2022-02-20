@@ -64,6 +64,17 @@ class APIController{
         }
     }
 
+    public static function obtenerCantImagenes(){
+        $i = 1;
+        $cantServicios = 0;
+        $nombreServicio = $_POST['nombreServicio'];
+        while(file_exists("build/img/" . $nombreServicio . $i . ".jpg")) {
+            $cantServicios++;
+            $i++;
+        }
+        echo json_encode($cantServicios);
+    }
+
     public static function obtenerUsuario() {
         $usuario = Usuario::find($_GET['id']);
         echo json_encode($usuario);
