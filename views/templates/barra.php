@@ -4,7 +4,6 @@
         <p id="nombre-usuario-barra"><?php echo $nombre ?? ''; ?></p>
     </div>
 
-
     <a class="boton" href="/logout">Cerrar Sesion</a>
 </div>
 <div class="acciones-usuario">
