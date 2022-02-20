@@ -18,6 +18,7 @@
     ],
     "require": {
         "phpmailer/phpmailer": "^6.5",
+        "ext-imagick": "*",
         "intervention/image": "^2.7",
         "vlucas/phpdotenv": "^5.4"
     }
