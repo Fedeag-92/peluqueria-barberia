@@ -170,13 +170,15 @@ class LoginController{
                 if(empty($alertas)){
                     //Hashear el password
                     $usuario->hashPassword();
+                    $usuario->confirmado = 1;
 
+                    //FORZAR A QUE LO USUARIOS NO SE NECESITEN CONFIRMAR, PARA PROBAR DEPLOYMENT
                     //generar un token unico
-                    $usuario->generarToken();
+                    //$usuario->generarToken();
 
                     //Enviar el email
-                    $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
-                    $email->enviarConfirmacion();
+                    //$email = new Email($usuario->email, $usuario->nombre, $usuario->token);
+                    //$email->enviarConfirmacion();
 
                     //Crear el usuario
                     if($usuario->guardar()){
