@@ -1,6 +1,6 @@
 <div class="barra">
     <div class="usuario-barra">
-        <p><i class='fas fa-user-circle'></i><i class='fas fa-angle-down'></i>&nbsp;</p>
+        <p><ion-icon name="person-circle-outline"></ion-icon><ion-icon name="chevron-down-outline"></ion-icon>&nbsp;</p>
         <p id="nombre-usuario-barra"><?php echo $nombre ?? ''; ?></p>
     </div>
 
@@ -29,5 +29,7 @@
 <?php $script = "
     <script src='//cdn.jsdelivr.net/npm/sweetalert2@11'></script>
     <script src='build/js/app.js'></script>
+    <script type='module' src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'></script>
+    <script nomodule src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
     ";
 ?>
