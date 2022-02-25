@@ -20,19 +20,19 @@
         <p class="text-center">Coloca tus datos y fecha de cita</p>
         <form class="formulario">
             <div class="campo">
-                <label for="nombre">Nombre: </label>
+                <label for="nombre"><ion-icon name="person-outline"></ion-icon>Nombre: </label>
                 <input type="text" id="nombre" placeholder="Tu Nombre" value="<?php echo $nombre ?>" disabled>
             </div>
             <div class="campo">
-                <label for="direccion">Lugar: </label>
+                <label for="direccion"><ion-icon name="location-outline"></ion-icon>Lugar: </label>
                 <input type="text" id="direccion" placeholder="Direccion Sucursal" value="<?php echo $direccion ?>" disabled>
             </div>
             <div class="campo">
-                <label for="fecha">Fecha: </label>
+                <label for="fecha"><ion-icon name="calendar-outline"></ion-icon>Fecha: </label>
                 <input type="date" id="fecha" min="<?php echo date('Y-m-d', strtotime('+1 day')) ?>">
             </div>
             <div class="campo">
-                <label for="hora">Hora: </label>
+                <label for="hora"><ion-icon name="time-outline"></ion-icon>Hora: </label>
                 <select id="hora" disabled>
                     <option value="" disabled selected >--:--</option>
                         <?php

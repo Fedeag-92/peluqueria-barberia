@@ -38,7 +38,15 @@ class Email{
         $phpmailer->Charset = 'UTF-8';
 
         //Definir el contenido
-        $contenido = "<html><p>Hola <strong>" . $this->nombre . "</strong>. Has creado tu cuenta en AppSalon, solo debes confirmar la misma presionando el siguiente enlace</p><p>Presiona aqui: <a href='https://peluqueria-barberia-nqn.herokuapp.com/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a></p><p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje.</p></html>";
+        $contenido = "<html><p>Hola <strong>" . $this->nombre . "</strong>. Has creado tu cuenta en AppSalon, solo debes confirmar la misma presionando el siguiente enlace</p><p>Presiona aqui: <a href='";
+
+        if($_SERVER['SERVER_NAME'] == 'localhost'){
+            $contenido .= "http://localhost:3000/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a></p><p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje.</p></html>";;
+        }else{
+            $contenido .= "https://peluqueria-barberia-nqn.herokuapp.com/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a></p><p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje.</p></html>";;
+        }
+
+        
 
 
 
@@ -72,7 +80,13 @@ class Email{
         $phpmailer->Charset = 'UTF-8';
 
         //Definir el contenido
-        $contenido = "<html><p>Hola <strong>" . $this->nombre . "</strong>. Has solicitado reestablecer tu password, sigue el siguiente enlace para hacerlo.</p><p>Presiona aqui: <a href='https://peluqueria-barberia-nqn.herokuapp.com/recuperar?token=" . $this->token . "'>Reestablecer Password</a></p><p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje.</p></html>";
+        $contenido = "<html><p>Hola <strong>" . $this->nombre . "</strong>. Has solicitado reestablecer tu password, sigue el siguiente enlace para hacerlo.</p><p>Presiona aqui: <a href='";
+
+        if($_SERVER['SERVER_NAME'] == 'localhost'){
+            $contenido .= "http://localhost:3000/recuperar?token=" . $this->token . "'>Reestablecer Password</a></p><p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje.</p></html>";
+        }else{
+            $contenido .= "https://peluqueria-barberia-nqn.herokuapp.com/recuperar?token=" . $this->token . "'>Reestablecer Password</a></p><p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje.</p></html>";
+        }
 
         $phpmailer->Body = $contenido;
         $phpmailer->AltBody = 'Esto es texto alternativo sin HTML';

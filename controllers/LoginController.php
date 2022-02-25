@@ -181,7 +181,7 @@ class LoginController{
                     //$email->enviarConfirmacion();
 
                     //Crear el usuario
-                    if($usuario->guardar()){ 
+                    if($usuario->guardar()){
                         header('Location: /'); //CAMBIAR a /mensaje
                     }
                 }

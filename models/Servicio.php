@@ -31,6 +31,8 @@ class Servicio extends ActiveRecord{
             self::$alertas['error'][] = 'El precio debe ser un numero';
         }else if($this->precio < 0){
             self::$alertas['error'][] = 'El precio debe ser positivo';
+        }else if($this->precio > 1000){
+            self::$alertas['error'][] = 'El precio no puede superar los $1000';
         }
         if($this->oferta < 0 || $this->oferta > 100){
             self::$alertas['error'][] = 'La oferta es un porcentaje entre 0(sin) y 100';

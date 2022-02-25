@@ -4,13 +4,13 @@
         <p id="nombre-usuario-barra"><?php echo $nombre ?? ''; ?></p>
     </div>
 
-    <a class="boton" href="/logout">Cerrar Sesion</a>
+    <a class="boton" href="/logout"><ion-icon name="log-out-outline"></ion-icon>Cerrar Sesion</a>
 </div>
 <div class="acciones-usuario">
-    <p class="mis-citas">Mis Citas</p>
-    <p class="cambiar-nombre">Cambiar nombre</p>
-    <p class="cambiar-password">Cambiar password</p>
-    <p class="cambiar-telefono">Cambiar telefono</p>
+    <p class="mis-citas"><ion-icon name="list-outline"></ion-icon>Mis Citas</p>
+    <p class="cambiar-nombre"><ion-icon name="create-outline"></ion-icon>Cambiar nombre</p>
+    <p class="cambiar-password"><ion-icon name="create-outline"></ion-icon>Cambiar password</p>
+    <p class="cambiar-telefono"><ion-icon name="create-outline"></ion-icon>Cambiar telefono</p>
 </div>
 <div id="overlay">
 

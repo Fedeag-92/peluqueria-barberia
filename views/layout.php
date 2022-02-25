@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -56,9 +56,9 @@
 
                 </div>
                 <div class="redes">
-                    <a href="https://www.facebook.com/"><img src="/build/img/facebook.png"></a>
-                    <a href="https://www.instagram.com/"><img src="/build/img/instagram.png"></a>
-                    <a href="https://www.whatsapp.com/"><img src="/build/img/whatsapp.png"></a>
+                    <a target="_blank" href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a target="_blank" href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a target="_blank" href="https://www.whatsapp.com/"><ion-icon name="logo-whatsapp"></ion-icon></a>
                 </div>
             </div>
 
@@ -73,7 +73,7 @@
     <?php echo $script ?? ''; ?>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 
