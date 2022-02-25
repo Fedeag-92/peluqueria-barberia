@@ -77,6 +77,6 @@ include_once __DIR__ . '/../templates/alertas.php' ?>
 </div>
 
 <?php
-    $script = "<script src='build/js/buscador.js'>";
+    $script .= "<script src='build/js/buscador.js'></script>";
     
 ?>

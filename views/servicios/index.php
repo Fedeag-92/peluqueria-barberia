@@ -35,7 +35,7 @@ include_once __DIR__ . '/../templates/alertas.php' ?>
             <p>Nombre: <span><?php echo $servicio->nombre; ?></span></p>
             <p>Precio: <span>$<?php echo $servicio->precio; ?></span></p>
             <?php if($servicio->oferta != 0){; ?>
-                <p>Descuento: <span><?php echo $servicio->oferta . '% -> $' . $servicio->precio * ((100 - $servicio->oferta) / 100); ?></span></p>
+                <p>Descuento: <span><?php echo $servicio->oferta . '% -> $' . round($servicio->precio * ((100 - $servicio->oferta) / 100), 0, PHP_ROUND_HALF_DOWN); ?></span></p>
             <?php }; ?>
             <p>Demora: <span><?php echo substr($servicio->demora, 1, 4); ?> horas</span></p>
             <div class="acciones">
@@ -46,7 +46,7 @@ include_once __DIR__ . '/../templates/alertas.php' ?>
                 
                 <div class="accion-proyecto">
                     <div class="texto-alerta">Editar</div>
-                    <a class="boton" href="/servicios/actualizar?id=<?php echo $servicio->id; ?>">🔄</a>
+                    <a class="boton" href="/servicios/actualizar?id=<?php echo $servicio->id; ?>">📝</a>
                 </div>
                 <div class="accion-proyecto">
                     <div class="texto-alerta">Eliminar</div>

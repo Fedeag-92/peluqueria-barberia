@@ -21,5 +21,5 @@
     <p>Hora de cierre: </p>
     <p class="sucursal-campo"><?php echo $sucursal->horaCierre; ?></p>
 
-    <a class="boton" href="sucursal/actualizar">🔄</a>
+    <a class="boton" href="sucursal/actualizar">📝</a>
 </div>

@@ -49,7 +49,7 @@ include_once __DIR__ . '/../templates/alertas.php' ?>
                             <input type="hidden" name="id" value="<?php echo $usuario->id;?>">
                             <input type="submit" value="🗑️" class="boton-eliminar">
                         </form>
-                        <a href="usuarios/actualizar?id=<?php echo $usuario->id; ?>" class="boton">🔄</a>
+                        <a href="usuarios/actualizar?id=<?php echo $usuario->id; ?>" class="boton">📝</a>
                     </th>
                 </tr>
                 <?php endforeach; ?>
